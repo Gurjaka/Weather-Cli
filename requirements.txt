@@ -1,0 +1,9 @@
+brotlicffi==1.1.0.0
+certifi==2024.2.2
+cffi==1.16.0
+charset-normalizer==3.3.2
+idna==3.7
+pycparser==2.22
+requests==2.32.3
+simplejson==3.19.2
+urllib3==2.2.2

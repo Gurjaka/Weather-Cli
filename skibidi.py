@@ -14,5 +14,5 @@ def get_weather(city):
     data = response.json()
 
     return data
-
-print(get_weather('Zugdidi'))
+for i in get_weather('Zugdidi'):
+  print(i)
