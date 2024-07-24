@@ -3,6 +3,11 @@ from modules.utils import *
 from simple_term_menu import TerminalMenu
 
 def support():
+    '''
+    Support page.
+    
+    Option menu for different types of support.
+    '''
     clear()
     print("Welcome to the support section. Support Mail : Weatherapp@gmail.com\n")
     print("How can we assist you today?\n")
@@ -15,15 +20,25 @@ def support():
     
     if opt == '1) The weather app is not accurate or not working.':
         print("If there are any issues with the weather app or it's accuracy report it to the support mail written above")
+        input('\ntype anything to exit: ')
     elif opt == '2) Other bugs.':
         print("If there are any bugs you want to report, report it to the support mail written above. ")    
+        input('\ntype anything to exit: ')
     elif opt == '3) Suggest other improvements.':
         print("If there is anything you want to suggest us, suggest it to the support mail written above.")  
+        input('\ntype anything to exit: ')
 
 def aboutus():
+    '''
+    Simple info about us.
+    '''
     print("This is a small testing project of weather app inside a terminal.\nThis is still in working and you may encounter some bugs.")
+    input('\ntype anything to exit: ')
 
 def faq():
+    '''
+    FAQ page.
+    '''
     print("""
 Q: How do I get weather information using this application?
 A: Select the "Weather" option from the menu, enter your city name when prompted,
@@ -64,8 +79,12 @@ Ensure you have Python installed to use it.
 Q: How can I quit the application?
 A: Select the "Quit" option from the menu to exit the application gracefully.
 """)
+    input('type anything to exit: ')
 
 def coffee():
+    '''
+    Buy coffee page.
+    '''
     print("If you enjoy using this program, consider supporting us by buying a coffee at buymeacoffe.com/NiGu")
-
+    input('\ntype anything to exit: ')
     

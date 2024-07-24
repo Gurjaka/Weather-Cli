@@ -5,7 +5,9 @@ from simple_term_menu import TerminalMenu
 
 def get_weather(city):
     '''
-    Fetch city info from API
+    Fetch city info from API.
+    
+    Get data from API and display according to users choice.
     '''
     # Define url and API 
     key = 'f6f227bea0c24040978115410242407'
@@ -18,6 +20,7 @@ def get_weather(city):
     while True:
         # Terminal Menu
         print()
+        
         options = ['1) Location', '2) Condition', '3) All info', '4) Previous menu', '5) Quit']
         terminal_menu = TerminalMenu(options)
         menu_entry_index = terminal_menu.show()

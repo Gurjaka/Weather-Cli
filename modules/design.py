@@ -4,14 +4,18 @@ from simple_term_menu import TerminalMenu
 def greet():
     '''
     Simple greet menu
+    
+    Simple greet with option menu, making easy to navigate.
     '''
     clear()
     
+    # Welcome box on top
     width = term('width')
     top = '-' * width
     side = f'|{" " * (width - 2)}|'
     welcome = 'Welcome to weather cli!'
     
+    # Calculate stuff
     welcome_length = len(welcome)
     total_padding = (width - welcome_length - 2)
     left_padding = total_padding // 2
