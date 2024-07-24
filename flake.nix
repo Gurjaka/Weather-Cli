@@ -9,7 +9,7 @@
   let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      py = pkgs.python3Packages;
+      py = pkgs.python312Packages;
   in
   {
     devShells.${system}.default  =
@@ -20,6 +20,7 @@
         py.pip
         py.requests
         py.simplejson
+        py.simple-term-menu
       ];
 
       shellHook = ''

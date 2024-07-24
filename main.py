@@ -1,18 +1,32 @@
+#  /home/gurami/Documents/Python-Projects/.venv/bin/python /home/gurami/Documents/Weather/main.py    
 import json
 import requests
-#f6f227bea0c24040978115410242407
-def get_weather(city):
-    '''
-    Fetch city info from API
-    '''
-    # Define url and API 
-    key = 'f6f227bea0c24040978115410242407'
-    url = f"http://api.weatherapi.com/v1/current.json?key={key}&q={city}"
+import sys
+from modules.utils import *
+from modules.design import *
+from modules.api import *
+from modules.options import *
+
+clear()
+
+while True:
+    opt = greet()
     
-    # Define get function
-    response = requests.get(url)
-    data = response.json()
+    if opt == '1) Weather':
+        get_weather(city())
 
-    return data
+    elif opt == '2) Support':
+        support()
 
-print(get_weather('Zugdidi'))
+    elif opt == '3) About us':
+        aboutus()
+
+    elif opt == '4) FAQ':
+        faq()
+
+    elif opt == '5) Buy me a coffee':
+        coffee()
+
+    elif opt == '6) Quit':
+        clear()
+        sys.exit()
