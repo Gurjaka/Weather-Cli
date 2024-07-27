@@ -20,6 +20,7 @@
         py.pip
         py.requests
         py.simplejson
+        py.python-dotenv
       ];
     };
   };
