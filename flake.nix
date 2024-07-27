@@ -20,12 +20,7 @@
         py.pip
         py.requests
         py.simplejson
-        py.simple-term-menu
       ];
-
-      shellHook = ''
-        echo "Hello World"
-      '';
     };
   };
 }

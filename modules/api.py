@@ -1,7 +1,6 @@
 import requests
 import sys
 from modules.design import *
-from simple_term_menu import TerminalMenu 
 
 def get_weather(city):
     '''
@@ -20,37 +19,61 @@ def get_weather(city):
     while True:
         # Terminal Menu
         print()
+        top, side, width = border()
+
+        print(f'{top}\n{side}\n{txt('Option Menu:')}\n{side}\n{txt('1) Location')}\n{txt('2) Condition')}\n{txt('3) All info')}\n{txt('4) Previous menu')}\n{txt('5) Quit')}\n{side}\n{top}')
         
-        options = ['1) Location', '2) Condition', '3) All info', '4) Previous menu', '5) Quit']
-        terminal_menu = TerminalMenu(options)
-        menu_entry_index = terminal_menu.show()
-        opt = options[menu_entry_index]
+        opt = padding('Choose option:')
         
-        if opt == '1) Location':
-            for key, value in data['location'].items():
-                print(f'{key}: {value}')
+        match opt:
+            case '1':
+                clear()
+                top, side, width = border()
+
+                welcome()
+
+                print(f'{top}\n{side}')
+                for key, value in data['location'].items():
+                    if key == 'name':
+                        print(txt(value))
+                    print(txt(f'{key}: {value}'))
+                print(f'{side}\n{top}')
+                
+            case '2':
+                clear()
+                welcome()
+
+                print(f'{top}\n{side}')
+                for key, value in data['current'].items():
+                    if key == 'pressure_mb':
+                        break
+                    print(txt(f'{key}: {value}'))
+                print(f'{side}\n{top}')
             
-        elif opt == '2) Condition':
-            for key, value in data['current'].items():
-                if key == 'pressure_mb':
-                    break
-                print(f'{key}: {value}')
-          
-        elif opt == '3) All info':
-            for key, value in data['location'].items():
-                print(f'{key}: {value}')
+            case '3':
+                clear()
+                welcome()
+
+                print(f'{top}\n{side}')
+                print(f'{txt('Location: ')}\n{side}')
+
+                for key, value in data['location'].items():
+                    if key == 'name':
+                        print(txt(value))
+                    print(txt(f'{key}: {value}'))
+                
+                print(f'{side}\n{txt('Condition: ')}\n{side}')
+                for key, value in data['current'].items():
+                    if key == 'pressure_mb':
+                        break
+                    print(txt(f'{key}: {value}'))
+
+                print(f'{side}\n{top}')
             
-            print()
-            
-            for key, value in data['current'].items():
-                if key == 'pressure_mb':
-                    break
-                print(f'{key}: {value}')
+            case '4':
+                break
         
-        elif opt == '4) Previous menu':
-            break
-        
-        elif opt == '5) Quit':
-          sys.exit()
+            case '5':
+                sys.exit()
         
     return data
