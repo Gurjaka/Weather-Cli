@@ -1,8 +1,6 @@
 import requests
 import sys
-import os
 from modules.design import *
-from dotenv import load_dotenv, dotenv_values 
 
 def get_weather(city):
     '''
@@ -11,8 +9,7 @@ def get_weather(city):
     Get data from API and display according to users choice.
     '''
     # Define url and API
-    load_dotenv() 
-    key = os.getenv("API_KEY")
+    key = 'f6f227bea0c24040978115410242407'
     url = f"http://api.weatherapi.com/v1/current.json?key={key}&q={city}"
     
     # Define get function
