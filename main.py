@@ -1,7 +1,5 @@
 #  /home/gurami/Documents/Python-Projects/.venv/bin/python /home/gurami/Documents/Weather/main.py    
 # import modules
-import json
-import requests
 import sys
 from modules.utils import *
 from modules.design import *

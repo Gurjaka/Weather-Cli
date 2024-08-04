@@ -15,12 +15,17 @@
     devShells.${system}.default  =
     pkgs.mkShell
       {
-      buildInputs =  with pkgs; [
+      packages =  with pkgs; [
         python3
+        fish
         py.pip
         py.requests
         py.simplejson
       ];
+      
+      shellHook = ''
+        exec fish
+      '';
     };
   };
 }
