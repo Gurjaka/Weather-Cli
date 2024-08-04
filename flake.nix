@@ -9,10 +9,10 @@
   let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      py = pkgs.python312Packages;
+      py = pkgs.python3.pkgs;
   in
   {
-    devShells.${system}.default  =
+    devShells.${system}.default =
     pkgs.mkShell
       {
       packages =  with pkgs; [
