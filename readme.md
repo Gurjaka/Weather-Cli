@@ -16,7 +16,7 @@
 ## Installation
 **To install the Weather CLI App, follow these steps:**
 **1) Clone the repository:**
-```git clone https://github.com/Gurjaka/Dotfiles.git```
+```git clone https://github.com/Gurjaka/Weather-Cli.git```
 **2) Navigate to the directory:**
 ```cd Documents/Weather-Cli```
 **3) Install the required dependencies:**
